@@ -1,0 +1,11 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PsalmGlobal" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="config" value="$PROJECT_DIR$/psalm.xml" />
+      <option name="showInfo" value="true" />
+      <option name="findUnusedCode" value="true" />
+      <option name="findUnusedSuppress" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
