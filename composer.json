@@ -27,5 +27,12 @@
     "psr-4": {
       "App\\Tests\\": "tests/"
     }
+  },
+  "scripts": {
+    "psalm-check": "./vendor/bin/psalm --no-cache --no-diff",
+    "psalm-ci-check": "./vendor/bin/psalm --no-cache --no-diff --show-info=false --output-format=junit",
+    "cs-check": "./vendor/bin/php-cs-fixer fix -v --dry-run --using-cache=no",
+    "cs-ci-check": "./vendor/bin/php-cs-fixer fix -v --dry-run --using-cache=no --format=junit",
+    "run-tests": "./vendor/bin/phpunit --do-not-cache-result -- tests"
   }
 }
