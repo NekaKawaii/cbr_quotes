@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Type;
 
+use function App\now;
+
 /**
  * Date without time.
  */
@@ -23,6 +25,22 @@ final class Date
         }
 
         return new self($dateString);
+    }
+
+    /**
+     * Today's date
+     */
+    public static function today(): self
+    {
+        return new self(now()->format('Y-m-d'));
+    }
+
+    /**
+     * Yesterday's date
+     */
+    public static function yesterday(): self
+    {
+        return new self(now()->modify('-1 day')->format('Y-m-d'));
     }
 
     /**

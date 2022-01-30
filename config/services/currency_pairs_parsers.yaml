@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  .app.parser.cbr.client:
+    class: \GuzzleHttp\Client
+
+  .App\Infrastructure\CurrencyPairsParser\CBRGuzzleParser:
+    class: App\Infrastructure\CurrencyPairsParser\CBRGuzzleParser
+    arguments:
+      $client: '@.app.parser.cbr.client'

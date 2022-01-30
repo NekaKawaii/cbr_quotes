@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  .App\CurrencyPair\Listener\UpdateOrCreatePairOnCurrencyPairReceived:
+    class: App\CurrencyPair\Listener\UpdateOrCreatePairOnCurrencyPairReceived
