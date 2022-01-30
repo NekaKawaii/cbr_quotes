@@ -64,11 +64,21 @@ final class Date
     }
 
     /**
+     * Convert date to custom format
+     *
+     * @see date() for format examples
+     */
+    public function format(string $format): string
+    {
+        return $this->toDateTime($this)->format($format);
+    }
+
+    /**
      * @psalm-suppress InvalidFalsableReturnType
      */
-    private function toDateTime(self $other): \DateTimeImmutable
+    private function toDateTime(self $date): \DateTimeImmutable
     {
         /** @psalm-suppress FalsableReturnStatement */
-        return \DateTimeImmutable::createFromFormat('Y-m-d', $other->dateString);
+        return \DateTimeImmutable::createFromFormat('Y-m-d', $date->dateString);
     }
 }
