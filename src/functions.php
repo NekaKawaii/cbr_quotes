@@ -75,3 +75,34 @@ function setPropertyValueByReflection(object $object, string $propertyName, $val
     $propertyReflected->setAccessible(true);
     $propertyReflected->setValue($object, $value);
 }
+
+/**
+ * Calculate delta percentage
+ */
+function getDeltaPercentageWithBCMath(float $initial, float $final): string
+{
+    return bcmul(
+        bcdiv(
+            bcadd((string)$final, (string)($initial * -1.0), 5),
+            (string)$initial,
+            5
+        ),
+        '100',
+        2
+    );
+}
+
+/**
+ * @template T
+ *
+ * @psalm-param class-string<T> $class
+ *
+ * @return T
+ *
+ * @noinspection PhpDocMissingThrowsInspection
+ */
+function createObjectWithoutConstructor(string $class): object
+{
+    /** @noinspection PhpUnhandledExceptionInspection */
+    return (new \ReflectionClass($class))->newInstanceWithoutConstructor();
+}

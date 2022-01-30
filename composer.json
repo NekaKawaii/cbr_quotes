@@ -11,6 +11,7 @@
     "ext-ctype": "*",
     "ext-iconv": "*",
     "ext-simplexml": "*",
+    "ext-bcmath": "*",
     "guzzlehttp/guzzle": "^7.4",
     "symfony/console": "6.0.*",
     "symfony/dotenv": "6.0.*",

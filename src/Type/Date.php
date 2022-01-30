@@ -73,6 +73,11 @@ final class Date
         return $this->toDateTime($this)->format($format);
     }
 
+    public function __toString(): string
+    {
+        return $this->dateString;
+    }
+
     /**
      * @psalm-suppress InvalidFalsableReturnType
      */
