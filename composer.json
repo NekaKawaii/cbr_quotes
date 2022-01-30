@@ -7,7 +7,17 @@
     }
   ],
   "require": {
-    "php": ">=8.1"
+    "php": ">=8.1",
+    "ext-ctype": "*",
+    "ext-iconv": "*",
+    "guzzlehttp/guzzle": "^7.4",
+    "symfony/console": "6.0.*",
+    "symfony/dotenv": "6.0.*",
+    "symfony/flex": "^2",
+    "symfony/framework-bundle": "6.0.*",
+    "symfony/messenger": "6.0.*",
+    "symfony/runtime": "6.0.*",
+    "symfony/yaml": "6.0.*"
   },
   "require-dev": {
     "vimeo/psalm": "4.18.*",
@@ -34,5 +44,34 @@
     "cs-check": "./vendor/bin/php-cs-fixer fix -v --dry-run --using-cache=no",
     "cs-ci-check": "./vendor/bin/php-cs-fixer fix -v --dry-run --using-cache=no --format=junit",
     "run-tests": "./vendor/bin/phpunit --do-not-cache-result -- tests"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "symfony/flex": true,
+      "symfony/runtime": true
+    },
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "replace": {
+    "symfony/polyfill-ctype": "*",
+    "symfony/polyfill-iconv": "*",
+    "symfony/polyfill-php72": "*",
+    "symfony/polyfill-php73": "*",
+    "symfony/polyfill-php74": "*",
+    "symfony/polyfill-php80": "*"
+  },
+  "conflict": {
+    "symfony/symfony": "*"
+  },
+  "extra": {
+    "symfony": {
+      "allow-contrib": false,
+      "require": "6.0.*"
+    }
   }
 }
