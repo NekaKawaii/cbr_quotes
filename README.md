@@ -12,4 +12,4 @@ Run `bin/console app:parser:cbr --yesterday` to parse today's quotes.
 
 ### API usage
 
-Check OpenAPI specification [here](openapi/api.yaml)
+Check OpenAPI specification [here](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/NekaKawaii/cbr_quotes/master/openapi/api.yaml)
