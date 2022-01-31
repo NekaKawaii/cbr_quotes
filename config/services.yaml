@@ -2,6 +2,7 @@ imports:
     - { resource: services/currency_pairs_parsers.yaml }
     - { resource: services/currency_pair.yaml }
     - { resource: services/read_model.yaml }
+    - { resource: services/api.yaml }
 
 services:
     _defaults:

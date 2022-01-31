@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Api;
+namespace App\Api\Controller;
 
 use App\Api\Response\Api\GetCurrencyPairInfoResponse;
 use App\Api\Response\ResponseFactory;
