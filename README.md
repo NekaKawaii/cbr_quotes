@@ -8,7 +8,7 @@ It has Event Sourcing in its core and message-based intercommunication.
 
 Run `bin/console app:parser:cbr` to parse today's quotes.
 
-Run `bin/console app:parser:cbr --yesterday` to parse today's quotes.
+Run `bin/console app:parser:cbr --yesterday` to parse yesterday's quotes.
 
 ### API usage
 
