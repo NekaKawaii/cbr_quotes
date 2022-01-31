@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: CBR Quotes API
+  description: A sample API to get currency pair quotes
+paths:
+  /api/pair/{base}/{quote}:
+    get:
+      description: Returns currency pair information
+      parameters:
+        - name: base
+          in: path
+          required: true
+          description: Base currency
+          schema:
+            type: string
+            example: USD
+        - name: quote
+          in: path
+          required: true
+          description: Quote currency
+          schema:
+            type: string
+            example: RUB
+
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base:
+                    type: string
+                    nullable: false
+                    example: USD
+                    description: Base currency
+                  quote:
+                    type: string
+                    nullable: false
+                    example: RUB
+                    description: Quote currency
+                  date:
+                    type: string
+                    format: Y-m-d
+                    nullable: false
+                    example: 2022-01-01
+                    description: Date of quotation
+                  current:
+                    type: number
+                    nullable: false
+                    example: 80.454
+                    description: Amount on date
+                  previous:
+                    type: number
+                    nullable: true
+                    example: 75.558
+                    description: Amount on the day before date
+                  delta:
+                    type: string
+                    nullable: true
+                    example: -8.35%
+                    description: Delta for date amount and the day before date
+                  lastUpdatedAt:
+                    type: string
+                    format: ATOM
+                    example: 2022-01-01T12:44:35 +00:00
+                    description: Date and time of last update
