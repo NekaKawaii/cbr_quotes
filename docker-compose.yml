@@ -4,3 +4,15 @@ services:
   php:
     build:
       context: docker/php
+
+  db:
+    image: postgres:14.1
+    environment:
+      POSTGRES_DB: cbr_quotes
+      POSTGRES_USER: cbr_quotes
+      POSTGRES_PASSWORD: cbr_quotes
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+volumes:
+  dbdata:

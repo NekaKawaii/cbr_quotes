@@ -3,6 +3,11 @@ version: "3"
 services:
   php:
     user: '1000'
+    environment:
+      - DATABASE_URL="postgresql://cbr_quotes:cbr_quotes@localhost:5444/cbr_quotes?serverVersion=14&charset=utf8"
     volumes:
       - ./:/app
-      - /tmp/:/tmp/
+
+  db:
+    ports:
+      - '5444:5432'

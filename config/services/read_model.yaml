@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  .App\Infrastructure\ReadModel\ProjectionDbRepository:
+    class: App\Infrastructure\ReadModel\ProjectionDbRepository
+
+  .App\ReadModel\Listener\CurrencyPairDynamicsProjectionManager:
+    class: App\ReadModel\Listener\CurrencyPairDynamicsProjectionManager
+    arguments:
+      $repository: '@.App\Infrastructure\ReadModel\ProjectionDbRepository'

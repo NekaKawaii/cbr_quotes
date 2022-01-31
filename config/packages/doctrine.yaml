@@ -1,0 +1,6 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+
+        types:
+            datetime_utc_nanoseconds: \App\Infrastructure\DBAL\Type\DatetimeUTCNanoseconds

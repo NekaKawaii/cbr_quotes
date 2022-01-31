@@ -5,3 +5,8 @@ services:
 
   .App\CurrencyPair\Listener\UpdateOrCreatePairOnCurrencyPairReceived:
     class: App\CurrencyPair\Listener\UpdateOrCreatePairOnCurrencyPairReceived
+    arguments:
+      $currencyPairRepository: '@.App\Infrastructure\CurrencyPair\CurrencyPairEventSourcedRepository'
+
+  .App\Infrastructure\CurrencyPair\CurrencyPairEventSourcedRepository:
+    class: App\Infrastructure\CurrencyPair\CurrencyPairEventSourcedRepository

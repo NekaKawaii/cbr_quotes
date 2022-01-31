@@ -9,7 +9,7 @@ use App\Type\Date;
 /**
  * @psalm-immutable
  */
-final class CurrencyPairYesterdayAmountReceived
+final class CurrencyPairYesterdayAmountReceived implements CurrencyPairSourceEvent
 {
     /**
      * @param string $base Base currency for pair

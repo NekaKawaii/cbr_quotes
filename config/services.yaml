@@ -1,6 +1,7 @@
 imports:
     - { resource: services/currency_pairs_parsers.yaml }
     - { resource: services/currency_pair.yaml }
+    - { resource: services/read_model.yaml }
 
 services:
     _defaults:
@@ -18,3 +19,7 @@ services:
         class: App\Console\ParseCBRQuotesCommand
         arguments:
             $parser: '@.App\Infrastructure\CurrencyPairsParser\CBRGuzzleParser'
+
+    .serializer.property_normalizer:
+        class: Symfony\Component\Serializer\Normalizer\PropertyNormalizer
+        tags: [serializer.normalizer]
